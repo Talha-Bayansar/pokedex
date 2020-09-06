@@ -18,6 +18,7 @@ img{
     height: 100px;
     position: relative;
     grid-area: img;
+    z-index: 1;
 }
 
 .container{
@@ -35,6 +36,7 @@ img{
 .card_title{
     grid-area: title;
     margin: 0.5rem 0  0 1rem;
+    text-transform: capitalize;
 }
 
 .pokemon_type{
@@ -47,14 +49,14 @@ img{
     margin-bottom: 10px;
     font-size: 0.75rem;
     width: 4rem;
+    padding: 0.25rem 0.5rem;
 }
 
-.type_1{
-    grid-area: type1;
-}
-
-.type_2{
-    grid-area: type2;
+.pokemon_types{
+    grid-area: types;
+    display: flex;
+    flex-direction: column;
+    justify-content: around;
 }
 
 .card_pokemon{
@@ -65,6 +67,17 @@ img{
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "title img"
-    "type1 img"
-    "type2 img";
+    "types img";
+}
+
+.card_pokemon::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background: white;
+    height: 90px;
+    width: 90px;
+    right: 5%;
+    bottom: 5%;
+    border-radius: 50%;
 }
